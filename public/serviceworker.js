@@ -2,13 +2,18 @@ const self = this;
 
 const CACHE_NAME = "site-static";
 
-const files = fetch("./asset-manifest.json")
-	.then((response) => response.json().files)
-	.then((json) => console.log(json));
-const assetsToCache = [];
-
-files.forEach((fileName) => assetsToCache.push(files[fileName]));
-console.log(assetsToCache);
+const assetsToCache = [
+	"/static/css/main.18cd6d76.chunk.css",
+	"/static/js/main.fea7bf8d.chunk.js",
+	"/static/js/main.fea7bf8d.chunk.js.map",
+	"/static/js/runtime-main.206861e8.js",
+	"/static/js/runtime-main.206861e8.js.map",
+	"/static/js/2.9b587647.chunk.js",
+	"/static/js/2.9b587647.chunk.js.map",
+	"/index.html",
+	"/static/css/main.18cd6d76.chunk.css.map",
+	"/static/js/2.9b587647.chunk.js.LICENSE.txt",
+];
 
 // install serviceworker
 self.addEventListener("install", (event) => {
