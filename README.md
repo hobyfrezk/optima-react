@@ -1,12 +1,12 @@
 # Project for Optima Analytic Inc Interview
 
-### For preview and fun test
+## For preview and quick test
+A live demo has been deployed to netlify, for a quick preview [check it here](https://chongshun-optima-analytic-interview-demo.netlify.app/).
 
-A live demo has been uploaded to Code Sandbox, for a quick preview [check it here](https://52bf8.csb.app/).
+
 
 ---
-
-### For deployment
+## For deployment in the Dev-Enviornment
 
 In the project directory, you can run:
 
@@ -23,10 +23,35 @@ npm start
 ```
 
 the app in the development mode.
-Open http://localhost:3000 to view it in the browser.
+Open http://localhost:3000 to view it in the browser.<br />
+
 
 ---
+## For deployment in the Production-Enviornment
+Deploy this web app with Offline feature. First of all, you have to build the project.
+```
+npm run build
+```
 
+Open `./build/asset-manifest.json` and copy the name of all static files, in my case, they are 
+```js
+[
+	"/static/css/main.18cd6d76.chunk.css",
+	"/static/js/main.8ef1f19f.chunk.js",
+	"/static/js/main.8ef1f19f.chunk.js.map",
+	"/static/js/runtime-main.206861e8.js",
+	"/static/js/runtime-main.206861e8.js.map",
+	"/static/js/2.9b587647.chunk.js",
+	"/static/js/2.9b587647.chunk.js.map",
+	"/index.html",
+	"/static/css/main.18cd6d76.chunk.css.map",
+	"/static/js/2.9b587647.chunk.js.LICENSE.txt",
+];
+```
+
+paste them in `./build/servicework.assetsToCache`. And you can deploy the `build` folder.
+
+---
 ### Tech stack List
 
 - React
@@ -34,9 +59,10 @@ Open http://localhost:3000 to view it in the browser.
 - Material UI
 - HTML5
 - CSS
+<br />
+
 
 ---
-
 ### Function Description
 
 - List all posts
@@ -50,7 +76,7 @@ Open http://localhost:3000 to view it in the browser.
 - Search
 
   - User can easily locate the search function on right-top of the Navbar, this function can be used to search posts according to the keyword given by the user. The searching result will be displayed on the main screen. If the use want to check all the posts, they can easily go back to the main page by simply clicking `List All` button.
-  - There is an auto-hidden mechansim of the search bar for a better user experience. This machansim also warpped with `List All` button.
+  - There is an auto-hidden mechansim for the search bar and it also warpped with `List All` button.
   - The search function is Case-Insensitive.
   - When search completed, all the posts contains the keyword will displayed with highlighting of the keyword.
 
@@ -62,11 +88,11 @@ Open http://localhost:3000 to view it in the browser.
 
 - Deletion
   - On the bottom of each post division, user can click the `Delete` button to remove the post, and all comments belong to that post will be cascade deleted.
+<br />
 
 ---
 
 ### Some other features or notes:
-
 - Consistent behavior in major browser: Chrome, Firefox, Safari/iOS, Edge.
 - Modal background blur effect might cause performance issue on some devices.
 - Use Redux to split/isolate app state from the app UI.
@@ -77,25 +103,15 @@ Open http://localhost:3000 to view it in the browser.
   - A `CommentCounting` for each post to get a better user experience
   - A `ScrollToTop` button is added to imporve user experience in mobile device.
   - A simple `Pluralize` filter which returns a plural suffix if the first argument is an integer greater than 1.
+<br />
 
 ---
+### PWA
+This web app can be deployed as a progressive app, and it has been deployed in the demo metioned in the begining of this doc.
 
-### Dependencies:
-
-```JSON
-"dependencies": {
-    "@material-ui/core": "^4.12.2",
-    "@material-ui/icons": "^4.11.2",
-    "@reduxjs/toolkit": "^1.6.1",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-app-polyfill": "^2.0.0",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.4",
-    "react-scripts": "4.0.3",
-    "redux": "^4.1.0",
-    "web-vitals": "^1.1.2"
-  },
+In React framework, in order to develop a offline PWA, the official suggest in their [documentation](https://create-react-app.dev/docs/making-a-progressive-web-app/#:~:text=It%27s%20recommended%20that%20you%20do%20not%20enable%20an%20offline-first%20service%20worker%20in%20a%20development%20environment%2C%20as%20it%20can%20lead%20to%20frustration%20when%20previously%20cached%20assets%20are%20used%20and%20do%20not%20include%20the%20latest%20changes%20you%27ve%20made%20locally.).
+``` 
+It's recommended that you do not enable an offline-first service worker in a development environment, as it can lead to frustration when previously cached assets are used and do not include the latest changes you've made locally.
 ```
+
+During my development, my solution is, first enable PWA configurations incluing the write `manifest.json`, open `cache storage` for the web, registration of `serviceWorker`. After it passes the local PWA audition, I use `npm build` to build the project and deploy it on Netlify. And offline features was developed and debugged in the production enviornment directly.
