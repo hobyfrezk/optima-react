@@ -1,7 +1,7 @@
 # Project for Optima Analytic Inc Interview 
 
 ### For preview and fun test
-A live demo has been uploaded to Code Sandbox, for a quick preview [check it here](https://52bf8.csb.app/)
+A live demo has been uploaded to Code Sandbox, for a quick preview [check it here](https://52bf8.csb.app/).
 
 ---
 ### For deployment
@@ -24,6 +24,7 @@ Open http://localhost:3000 to view it in the browser.
 - React
 - Redux
 - Material ui
+- CSS
 
 
 ---
