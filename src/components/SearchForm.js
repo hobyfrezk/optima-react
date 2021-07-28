@@ -86,7 +86,7 @@ const SearchForm = () => {
 	const keyword = useSelector((state) => state.filter.filter);
 
 	useEffect(() => {
-		// search bar auto-hidden logic. 
+		// search bar auto-hidden logic.
 		// if onfocus state is same as init onfocus state and search keyword is empty
 		// 1. we should only hide the search bar -> when search word is empty
 		// 2. we should hide the search bar when magnifying glass & search input lose focus or not hover.
@@ -137,7 +137,7 @@ const SearchForm = () => {
 					className={classes.textField}
 					onChange={handleOnChange}
 					value={useSelector((state) => state.filter.filter)}
-					placeholder="keyword"
+					placeholder="Search ..."
 					type="text"
 					onFocus={(e) => {
 						setOnFocus("input");

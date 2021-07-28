@@ -3,3 +3,22 @@
 	height: 100%;
 	background: linear-gradient(45deg, #fff 30%, rgba(234, 231, 220, 0.7) 90%);
 }
+
+input::-webkit-input-placeholder {
+	color: rgba(234, 231, 220, 0.7);
+}
+
+/*firefox 19+ versions*/
+input::-moz-placeholder {
+	color: rgba(234, 231, 220, 0.7);
+}
+
+/*IE  versions*/
+input::-ms-placeholder {
+	color: rgba(234, 231, 220, 0.7);
+}
+
+/*Latest modern browsers */
+input::placeholder {
+	color: rgba(234, 231, 220, 0.7);
+}
