@@ -9,6 +9,7 @@ const commentSlice = createSlice({
 			// if the data submitted with empty attributes,
 			// we simply set it to NotGiven
 			const newComment = {
+				// the id can be set with node-uuid, but a timestamp is enough for this demo
 				id: Date.now(),
 				post_id: action.payload.post_id || "NotGiven",
 				author: action.payload.author || "NotGiven",

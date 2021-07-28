@@ -1,12 +1,13 @@
 # Project for Optima Analytic Inc Interview
 
-## For preview and quick test
+### For preview and quick test
 A live demo has been deployed to netlify, for a quick preview [check it here](https://chongshun-optima-analytic-interview-demo.netlify.app/).
 
+Source code can also be viewed in the [Github](https://github.com/hobyfrezk/optima-react)
 
 
 ---
-## For deployment in the Dev-Enviornment
+### For deployment in the Dev-Enviornment
 
 In the project directory, you can run:
 
@@ -27,7 +28,7 @@ Open http://localhost:3000 to view it in the browser.<br />
 
 
 ---
-## For deployment in the Production-Enviornment
+### For deployment in the Production-Enviornment
 Deploy this web app with Offline feature. First of all, you have to build the project.
 ```
 npm run build
@@ -50,16 +51,6 @@ Open `./build/asset-manifest.json` and copy the name of all static files, in my 
 ```
 
 paste them in `./build/servicework.assetsToCache`. And you can deploy the `build` folder.
-
----
-### Tech stack List
-
-- React
-- Redux
-- Material UI
-- HTML5
-- CSS
-<br />
 
 
 ---
@@ -92,20 +83,6 @@ paste them in `./build/servicework.assetsToCache`. And you can deploy the `build
 
 ---
 
-### Some other features or notes:
-- Consistent behavior in major browser: Chrome, Firefox, Safari/iOS, Edge.
-- Modal background blur effect might cause performance issue on some devices.
-- Use Redux to split/isolate app state from the app UI.
-- Be aware, from full stack perspective, some functions (such as comments counting, cascade deletion of the comments) will cause to N+1 queries problem and huge database rewriting if we actually implement the same logic as what we did in the frontend part (in Redux).
-- Fully responsive, use Material UI to write css.
-- Use wave extention to check WCAG 2.1 accessibility guidelines.
-- Extra features:
-  - A `CommentCounting` for each post to get a better user experience
-  - A `ScrollToTop` button is added to imporve user experience in mobile device.
-  - A simple `Pluralize` filter which returns a plural suffix if the first argument is an integer greater than 1.
-<br />
-
----
 ### PWA
 This web app can be deployed as a progressive app, and it has been deployed in the demo metioned in the begining of this doc.
 
@@ -115,3 +92,25 @@ It's recommended that you do not enable an offline-first service worker in a dev
 ```
 
 During my development, my solution is, first enable PWA configurations incluing the write `manifest.json`, open `cache storage` for the web, registration of `serviceWorker`. After it passes the local PWA audition, I use `npm build` to build the project and deploy it on Netlify. And offline features was developed and debugged in the production enviornment directly.
+
+Data in the web is persist in the localStorage.
+
+---
+### Some other features or notes:
+Consistent behavior in major browser: Chrome, Firefox, Safari/iOS, Edge.
+
+Modal background blur effect might cause performance issue on some devices (This function is disabled in the deployment given in the begining of this doc).
+
+Use Redux to split/isolate app state from the app UI.
+
+Be aware, from full stack perspective, some functions (such as comments counting, cascade deletion of the comments) will cause to N+1 queries problem and huge database rewriting if we actually implement the same logic as what we did in the frontend part (in Redux).
+
+Fully responsive, use Material UI to write css.
+
+Use wave extention to check WCAG 2.1 accessibility guidelines.
+
+Extra features:
+- A `CommentCounting` for each post to get a better user experience
+- A `ScrollToTop` button is added to imporve user experience in mobile device.
+- A simple `Pluralize` filter which returns a plural suffix if the first argument is an integer greater than 1.
+- The data/state are persist in the browser's locolStage, which could extremly improve the user expierience, especially when the app is deployed as PWA.

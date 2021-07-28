@@ -10,6 +10,7 @@ const postSlice = createSlice({
 			// if the data submitted with empty attributes,
 			// we simply set it to NotGiven
 			const newPost = {
+				// the id can be set with node-uuid, but a timestamp is enough for this demo
 				id: Date.now(),
 				author: action.payload.author || "NotGiven",
 				email: action.payload.email || "NotGiven",
