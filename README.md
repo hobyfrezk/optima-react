@@ -23,7 +23,7 @@ Open http://localhost:3000 to view it in the browser.
 ### Tech stack List
 - React
 - Redux
-- Material ui
+- Material UI
 - HTML5
 - CSS
 
