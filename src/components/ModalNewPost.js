@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
 	backDrop: {
 		// add blur filter on the backgound will lead to performance issue and havn't been supported on firefox yet
 		// https://caniuse.com/css-backdrop-filter
-		backdropFilter: "blur(3px)",
+		// backdropFilter: "blur(3px)",
 	},
 	container: {
 		position: "relative",
