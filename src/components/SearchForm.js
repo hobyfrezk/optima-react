@@ -86,6 +86,10 @@ const SearchForm = () => {
 	const keyword = useSelector((state) => state.filter.filter);
 
 	useEffect(() => {
+		// search bar auto-hidden logic. 
+		// if onfocus state is same as init onfocus state and search keyword is empty
+		// 1. we should only hide the search bar -> when search word is empty
+		// 2. we should hide the search bar when magnifying glass & search input lose focus or not hover.
 		if (
 			JSON.stringify(focusState) === JSON.stringify(initOnFocusState) &&
 			keyword === ""
@@ -103,6 +107,7 @@ const SearchForm = () => {
 	};
 
 	const handleOnClick = () => {
+		//  when hide search bar by using magnifying glass, also delete typed in keyword
 		setFieldInvisable((state) => !state);
 		dispatch(updateFilter({ filter: "" }));
 	};

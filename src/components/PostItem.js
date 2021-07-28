@@ -13,6 +13,7 @@ import ModalNewComment from "./ModalNewComment";
 import { deleteComment } from "../redux/commentSlice";
 import { deletePost } from "../redux/postSlice";
 import { makeStyles } from "@material-ui/core/styles";
+import { pluralizer } from "../service/textPluralizer";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -195,12 +196,8 @@ const PostItem = ({ id, author, email, text, keyword }) => {
 				>
 					<p className={classes.headingText}>
 						{expanded
-							? `Hide ${comments.length} ${
-									comments.length > 1 ? "Comments" : "Comment"
-							  }.`
-							: `View ${comments.length} ${
-									comments.length > 1 ? "Comments" : "Comment"
-							  }.`}
+							? `Hide ${pluralizer(comments.length, 'Comment')}.`
+							: `View ${comments.length} ${pluralizer(comments.length, 'Comment')}.`}
 					</p>
 				</AccordionSummary>
 				<AccordionDetails>

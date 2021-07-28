@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { initialPostState } from "./dummyData";
+import { initialPostState } from "../service/dummyData";
 
 const postSlice = createSlice({
 	name: "post",

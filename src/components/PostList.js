@@ -3,6 +3,7 @@ import PostItem from "./PostItem";
 import React from "react";
 import filterPosts from "../service/filterService";
 import { makeStyles } from "@material-ui/core/styles";
+import { pluralizer } from "../service/textPluralizer";
 import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
@@ -44,12 +45,12 @@ const PostList = () => {
 	return (
 		<div className={classes.root}>
 			{keyword === "" ? (
-				<h2 className={classes.title}>All Posts:</h2>
+				<h2 className={classes.title}>{`All ${pluralizer(posts.length, "Post")}`}:</h2>
 			) : (
 				<div>
 					<h2 className={classes.title}>Search </h2>
 					<div className={classes.search}>
-						{posts.length} {posts.length > 1 ? "posts" : "post"} founded.
+						{posts.length} {pluralizer(posts.length, "post")} founded.
 					</div>
 				</div>
 			)}
