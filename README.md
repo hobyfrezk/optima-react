@@ -58,10 +58,11 @@ Open http://localhost:3000 to view it in the browser.
 - Consistent behavior in major browser: Chrome, Firefox, Safari/iOS, Edge.
 - Modal background blur effect might cause performance issue on some devices.
 - Use Redux to split/isolate app state from the app UI.
+- Be aware, from full stack perspective, some functions (such as comments counting, cascade deletion of the comments) will cause to N+1 queries problem if we actually implement the same querry logic as what we did in the frontend part (in Redux). 
 - Fully responsive, use Material UI to write css.
 - Comments will be counted for each post to get a better user experience, and a ScrollToTop Button is added to imporve user experience in mobile device.
 - Use wave extention to check WCAG 2.1 accessibility guidelines.
-- Be aware, from full stack perspective some functions (such as comments counting, cascade deletion of the comments) will lead to N+1 queries problem if we actually implement the same querry logic as we did in the frontend part. 
+
 
 ---
 ### Dependencies:
