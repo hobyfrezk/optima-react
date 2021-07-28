@@ -8,6 +8,7 @@ import Modal from "@material-ui/core/Modal";
 import TextField from "@material-ui/core/TextField";
 import { useDispatch } from "react-redux";
 
+// base modal for creating new post and creating new comment.
 const ModalBase = ({
 	open,
 	addHandler,

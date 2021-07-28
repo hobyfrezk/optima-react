@@ -1,59 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-const initialState = [
-	{
-		id: 1,
-		post_id: 1,
-		author: "mia",
-		email: "mia@gmail.com",
-		text: "This is first comment for post 1.",
-	},
-	{
-		id: 2,
-		post_id: 1,
-		author: "luigi",
-		email: "luigi@gmail.com",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.",
-	},
-	{
-		id: 3,
-		post_id: 2,
-		author: "hoby",
-		email: "hobyfrezk@gmail.com",
-		text: "This is first comment for post 2.",
-	},
-	{
-		id: 4,
-		post_id: 6,
-		author: "hoby",
-		email: "hobyfrezk@gmail.com",
-		text: "Praesent libero. Sed cursus ante dapibus diam.",
-	},
-	{
-		id: 5,
-		post_id: 6,
-		author: "mia",
-		email: "mia@gmail.com",
-		text: "Vivamus eu turpis est. Mauris a molestie dolor. Donec egestas varius consectetur. Aenean sit amet urna ac sapien facilisis fringilla. Quisque vehicula elementum diam, sodales tempor magna venenatis vitae. Nulla mollis sem magna, in faucibus ligula tincidunt at. Aliquam tempor eros porttitor quam aliquet ornare. Quisque orci diam, eleifend sit amet enim commodo, tincidunt laoreet orci.",
-	},
-];
+import { initialCommentState } from "./dummyData";
 
 const commentSlice = createSlice({
 	name: "comments",
-	initialState: initialState,
+	initialState: initialCommentState,
 	reducers: {
 		addComment: (state, action) => {
+			// if the data submitted with empty attributes,
+			// we simply set it to NotGiven
 			const newComment = {
 				id: Date.now(),
-				post_id: action.payload.post_id || "Not Given",
-				author: action.payload.author || "Not Given",
-				email: action.payload.email || "Not Given",
-				text: action.payload.text || "Not Given",
+				post_id: action.payload.post_id || "NotGiven",
+				author: action.payload.author || "NotGiven",
+				email: action.payload.email || "NotGiven",
+				text: action.payload.text || "NotGiven",
 			};
 			state.push(newComment);
 		},
 		deleteComment: (state, action) => {
-			// Cascade delete, delete comments when the father post is deleted.
+			// Cascade deletion.
 			return state.filter(
 				(comment) => comment.post_id !== action.payload.post_id
 			);

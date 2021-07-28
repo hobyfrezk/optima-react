@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// state management for search function.
 const filterSlice = createSlice({
 	name: "filter",
 	initialState: { filter: "" },

@@ -1,4 +1,6 @@
+// service functions for filtering/searching keywords.
 const isIncludeKeyword = (post, filter) => {
+	// enable searching case-insensitive by convert all strings into lower case
 	const keyword = filter.toLowerCase();
 	return (
 		post.author.toLowerCase().includes(keyword) ||

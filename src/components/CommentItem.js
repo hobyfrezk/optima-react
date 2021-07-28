@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
-		// border: "1px solid black",
 		borderRadius: "15px",
 		width: "100%",
 		display: "flex",
@@ -19,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
 		display: "grid",
 		alignItems: "baseline",
 		justifyContent: "flex-start",
-
 	},
 	author: {
 		fontSize: "16px",
@@ -34,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 		margin: "0px 5px 18px 5px",
 		fontSize: "14px",
 		fontFamily: "Inter, sans-serif",
-		padding: "5px 15px 10px 3px"
+		padding: "5px 15px 10px 3px",
 	},
 }));
 
@@ -45,6 +43,7 @@ const CommentItem = ({ comment }) => {
 	return (
 		<div className={classes.container}>
 			<Avatar className={classes.avatar}>
+				{/* Capitalize first letter of author name to have avatar properly */}
 				{author.charAt(0).toUpperCase()}
 			</Avatar>
 			<div>

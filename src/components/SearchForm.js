@@ -6,11 +6,8 @@ import SearchIcon from "@material-ui/icons/Search";
 import { makeStyles } from "@material-ui/core/styles";
 import { updateFilter } from "../redux/filterSlice";
 
-/* 
-initOnFocusState used to initialize components onFocus/onHover 
-State for advanced optional rendering
-*/
 const initOnFocusState = {
+	/*  used to initialize components onFocus/onHover State for advanced optional rendering */
 	icon: false,
 	input: false,
 	inputHover: false,
