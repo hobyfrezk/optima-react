@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
@@ -9,10 +10,9 @@ import CommentItem from "./CommentItem";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import HighlightedText from "./HighlightText";
 import ModalNewComment from "./ModalNewComment";
+import { deleteComment } from "../redux/commentSlice";
 import { deletePost } from "../redux/postSlice";
 import { makeStyles } from "@material-ui/core/styles";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -23,9 +23,6 @@ const useStyles = makeStyles((theme) => ({
 
 		"&:hover": {
 			boxShadow: "0px 0px 5px 3px rgba(56, 124, 175)",
-		},
-		"&::after": {
-			content: `""`,
 		},
 	},
 	header: {
@@ -144,6 +141,7 @@ const PostItem = ({ id, author, email, text, keyword }) => {
 
 	const handleDeleteClick = () => {
 		dispatch(deletePost({ id: id }));
+		dispatch(deleteComment({ post_id: id }));
 	};
 
 	const handleCommentClick = () => {

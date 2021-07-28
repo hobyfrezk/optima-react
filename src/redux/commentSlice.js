@@ -52,8 +52,14 @@ const commentSlice = createSlice({
 			};
 			state.push(newComment);
 		},
+		deleteComment: (state, action) => {
+			// Cascade delete, delete comments when the father post is deleted.
+			return state.filter(
+				(comment) => comment.post_id !== action.payload.post_id
+			);
+		},
 	},
 });
 
-export const { addComment } = commentSlice.actions;
+export const { addComment, deleteComment } = commentSlice.actions;
 export default commentSlice.reducer;
