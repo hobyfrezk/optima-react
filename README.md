@@ -29,8 +29,6 @@ npm start
 the app in the development mode.
 Open http://localhost:3000 to view it in the browser.<br />
 
----
-
 ### Deploy in production enviornment
 
 Deploy this web app with Offline feature. First of all, you have to build the project.
