@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles.css";
+
+import NavBar from "./components/NavBar";
+import PostList from "./components/PostList";
+import { ScrollToTopControlller } from "./components/ScrollTopButton";
+import { ThemeProvider } from "@material-ui/core/styles";
+import theme from "./components/theme";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<ThemeProvider theme={theme}>
+			<div className="App">
+				<NavBar />
+				<PostList />
+				<ScrollToTopControlller />
+			</div>
+		</ThemeProvider>
+	);
 }
 
 export default App;
