@@ -104,7 +104,7 @@ In my development, my solution is, first enable PWA configurations incluing the 
 ---
 
 ## Some other features or notes:
-0. Data in the web are persist in the localStorage.
+0. Data in the web are persist in the localStorage which can extremly improve the user expierience, especially when the web is deployed as progressive app.
 
 1. Consistent behavior in major browser: Chrome, Firefox, Safari/iOS, Edge.
 
@@ -122,4 +122,3 @@ In my development, my solution is, first enable PWA configurations incluing the 
   - A `CommentCounting` for each post to get a better user experience
   - A `ScrollToTop` button is added to imporve user experience in mobile device.
   - A simple `Pluralize` filter which returns a plural suffix if the first argument is an integer greater than 1.
-  - The data/state are persist in the browser's locolStage, which could extremly improve the user expierience, especially when the app is deployed as PWA.
