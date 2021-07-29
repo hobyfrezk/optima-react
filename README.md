@@ -4,6 +4,8 @@
 
 A live demo has been deployed to netlify, for a quick preview [check it here](https://chongshun-optima-analytic-interview-demo.netlify.app/).
 
+All features are available in this demo.
+
 Source code can also be viewed in the [Github](https://github.com/hobyfrezk/optima-react).
 
 ---
