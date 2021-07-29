@@ -2,11 +2,9 @@
 
 ## For preview and quick test
 
-A live demo has been deployed to netlify, for a quick preview [check it here](https://chongshun-optima-analytic-interview-demo.netlify.app/).
+A live demo has been deployed on the Netlify, for a quick preview [check it here](https://chongshun-optima-analytic-interview-demo.netlify.app/).
 
-All features are available in this demo.
-
-Source code can also be viewed in the [Github](https://github.com/hobyfrezk/optima-react).
+All features are available in this demo. Source code can also be viewed in the [Github](https://github.com/hobyfrezk/optima-react).
 
 ---
 
@@ -32,8 +30,9 @@ the app in the development mode.
 Open http://localhost:3000 to view it in the browser. Notice that PWA-offline function only available in Prodction enviornment deployment, the reason is that un-build js and css files are not cached.
 
 ### Deploy in production enviornment
+The build folder can be used to deploy, or follow the instructions below for manually deployment.
 
-Deploy this web app with Offline feature. First of all, you have to build the project.
+First of all, you have to build the project.
 
 ```
 npm run build
@@ -91,21 +90,21 @@ Deletion
 
 ## PWA
 
-This web app can be deployed as a progressive app, and it has been deployed in the demo metioned in the begining of this doc.
+This web can be deployed as a progressive app, which you can find the detail in this [demo]((https://chongshun-optima-analytic-interview-demo.netlify.app/)).
 
-In React framework, in order to develop a offline PWA, the official suggest in their [documentation](https://create-react-app.dev/docs/making-a-progressive-web-app/#:~:text=It%27s%20recommended%20that%20you%20do%20not%20enable%20an%20offline-first%20service%20worker%20in%20a%20development%20environment%2C%20as%20it%20can%20lead%20to%20frustration%20when%20previously%20cached%20assets%20are%20used%20and%20do%20not%20include%20the%20latest%20changes%20you%27ve%20made%20locally.).
+In React framework, in order to develop a offline PWA, the React team has suggested in their [documentation](https://create-react-app.dev/docs/making-a-progressive-web-app/#:~:text=It%27s%20recommended%20that%20you%20do%20not%20enable%20an%20offline-first%20service%20worker%20in%20a%20development%20environment%2C%20as%20it%20can%20lead%20to%20frustration%20when%20previously%20cached%20assets%20are%20used%20and%20do%20not%20include%20the%20latest%20changes%20you%27ve%20made%20locally.).
 
 ```
 It's recommended that you do not enable an offline-first service worker in a development environment, as it can lead to frustration when previously cached assets are used and do not include the latest changes you've made locally.
 ```
 
-During my development, my solution is, first enable PWA configurations incluing the write `manifest.json`, open `cache storage` for the web, registration of `serviceWorker`. After it passes the local PWA audition, I use `npm build` to build the project and deploy it on Netlify. And offline features was developed and debugged in the production enviornment directly.
+In my development, my solution is, first enable PWA configurations incluing the write `manifest.json`, open `cache storage` for the web, and registration of `serviceWorker`. After it passes the local PWA audit, I use `npm build` to build the project and deploy it on Netlify. Offline features were developed and debugged in the production enviornment directly.
 
-Data in the web are persist in the localStorage.
 
 ---
 
 ## Some other features or notes:
+0. Data in the web are persist in the localStorage.
 
 1. Consistent behavior in major browser: Chrome, Firefox, Safari/iOS, Edge.
 
