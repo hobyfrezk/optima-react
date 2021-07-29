@@ -4,15 +4,15 @@ const CACHE_NAME = "site-static";
 
 const assetsToCache = [
 	"/static/css/main.18cd6d76.chunk.css",
-	"/static/js/main.fea7bf8d.chunk.js",
-	"/static/js/main.fea7bf8d.chunk.js.map",
+	"/static/js/main.3c1bbce8.chunk.js",
+	"/static/js/main.3c1bbce8.chunk.js.map",
 	"/static/js/runtime-main.206861e8.js",
 	"/static/js/runtime-main.206861e8.js.map",
 	"/static/js/2.9b587647.chunk.js",
 	"/static/js/2.9b587647.chunk.js.map",
 	"/index.html",
 	"/static/css/main.18cd6d76.chunk.css.map",
-	"/static/js/2.9b587647.chunk.js.LICENSE.txt",
+	"/static/js/2.9b587647.chunk.js.LICENSE.txt"
 ];
 
 // install serviceworker
@@ -30,7 +30,7 @@ self.addEventListener("fetch", (event) => {
 	event.respondWith(
 		caches
 			.match(event.request)
-			.then((cacheRes) => cacheRes || fetch(event.request))
+			.then((cacheRes) => cacheRes || caches.match("/index.html"))
 	);
 });
 

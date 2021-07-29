@@ -18,7 +18,7 @@ In the project directory, you can run:
 npm install
 ```
 
-to install the dependencies for this app, all dependencies are described in `pakage.json`.
+to install the dependencies for this app, all dependencies are described in `package.json`.
 
 Run
 
@@ -27,7 +27,7 @@ npm start
 ```
 
 the app in the development mode.
-Open http://localhost:3000 to view it in the browser.<br />
+Open http://localhost:3000 to view it in the browser. Notice that PWA-offline function only available in Prodction enviornment deployment, the reason is that un-build js and css files are not cached.
 
 ### Deploy in production enviornment
 
@@ -37,7 +37,7 @@ Deploy this web app with Offline feature. First of all, you have to build the pr
 npm run build
 ```
 
-Open `./build/asset-manifest.json` and copy the name of all static files, in my case, they are
+Open `./build/asset-manifest.json` and find the name of all static files, in my case, they are
 
 ```js
 [
@@ -54,7 +54,7 @@ Open `./build/asset-manifest.json` and copy the name of all static files, in my 
 ];
 ```
 
-paste them in `./build/servicework.assetsToCache`. And you are good to deploy the `build` folder.
+copy these name to `assetsToCache` variable in file `./build/servicework.js`. And you are good to deploy the `build` folder.
 
 ---
 
